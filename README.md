@@ -1,4 +1,7 @@
-egblog
-======
 
-My personal blog project  using Node.js, Express.js, MongoDB, Twitter Bootstrap
+Eniz Gülek Personal Blog 
+
+Node.js
+Express 
+Twitter Bootstrap
+Mongoose (MongoDB ORM tool for Node.js)

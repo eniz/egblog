@@ -1,0 +1,28 @@
+extends ../layout
+
+block content
+
+    include adminbar
+    
+    a.btn(href="/Admin/NewPost") Create a new post
+    
+    table.table.table-striped.table-hover
+        thead
+            tr
+                th Post ID
+                th Title
+                th Int/Ext
+                th Posted
+        tbody
+        - posts.forEach(function(item){
+            tr
+                td= item.sid
+                td: a(href="/Admin/Post/" + item.sid)= item.title
+                td
+                    - if(item.ext_link != ""){
+                    | External
+                    - }else{
+                    | Internal
+                    - }
+                td: time= item.posted
+        - }

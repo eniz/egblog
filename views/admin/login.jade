@@ -1,0 +1,29 @@
+ div.loginform
+        form.form-horizontal(method="post", action="/Admin/Login")
+            legend Login
+            
+            .control-group
+                label.control-label(for="inputEmail") Email
+                .controls
+                    - if(typeof(email) != 'undefined')
+                        input#inputEmail(type="text", name="email", placeholder="Email", value=email)
+                    - else
+                        input#inputEmail(type="text", name="email", placeholder="Email")
+            
+            - if(typeof(error_text) != 'undefined'){
+                .control-group.error
+                    label.control-label(for="inputPassword") Password
+                    .controls
+                        input#inputPassword(type="password", name="password")
+                        span.help-inline=error_text
+            - }else{
+                .control-group
+                    label.control-label(for="inputPassword") Password
+                    .controls
+                        input#inputPassword(type="password", name="password")
+            - }
+                    
+                    
+            .control-group
+                .controls
+                    input.btn.btn-inverse(type="submit", value="Login")
